@@ -1,7 +1,7 @@
 <?php require_once './inc/header.php'; require_once './inc/menu.php';?>
 
 <script type='text/javascript'>
-  var ourscore = <?php echo $_SESSION['score']; ?>;
+  var ourscore = Math.floor(<?php echo $_SESSION['score']; ?>);
   updateScore();
 </script>
 
@@ -36,7 +36,7 @@
       ourscore = ourscore + points;
     }
 
-    document.getElementById('new_score').value = ourscore;
+    document.getElementById('new_score').value = Math.floor(ourscore);
     document.getElementById('photo_url').value = chosenFriendPhoto;
     document.getElementById('friend_name').value = chosenFriendName;
     document.getElementById('actual_user').value = actualUserName;
